@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Kolokwium_S20226.Models
 {
@@ -24,27 +20,10 @@ namespace Kolokwium_S20226.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<NazwaTabeli>(e =>
-            //{
-
-            //});
-
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<NazwaTabeli>(e =>
-            {
-                e.HasKey(e => e.Id);
-                e.Property(e => e.Nazwa ).IsRequired().HasMaxLength();
 
-                e.HasData(
-                    new NazwaTabeli {
-                    
-                    },
-                    new NazwaTabeli { 
-
-                    }
-                    );
-            });
+          //  modelBuilder.ApplyConfiguration(new MusicianConfiguration());
+           // modelBuilder.ApplyConfiguration(new MusicianTrackConfiguration());
 
         }
     }
