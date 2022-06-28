@@ -22,8 +22,8 @@ namespace Kolokwium_S20226.Models
         {
             base.OnModelCreating(modelBuilder);
 
-          //  modelBuilder.ApplyConfiguration(new MusicianConfiguration());
-           // modelBuilder.ApplyConfiguration(new MusicianTrackConfiguration());
+            //  modelBuilder.ApplyConfiguration(new MusicianConfiguration());
+            // modelBuilder.ApplyConfiguration(new MusicianTrackConfiguration());
 
         }
     }
