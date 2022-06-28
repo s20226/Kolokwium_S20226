@@ -14,18 +14,33 @@ namespace Kolokwium_S20226.Configurations
             builder
                 .HasOne(e => e.Member)
                 .WithMany(e => e.Memberships)
-                .HasForeignKey(e => e.MemberID);
+                .HasForeignKey(e => e.MemberID).OnDelete(DeleteBehavior.NoAction);
 
             builder
                 .HasOne(e => e.Team)
                 .WithMany(e => e.Memberships)
-                .HasForeignKey(e => e.TeamID);
+                .HasForeignKey(e => e.TeamID).OnDelete(DeleteBehavior.NoAction);
 
             builder.HasData(
                 new Membership
                 {
+                   MemberID=1, TeamID=1, MembershipDate=System.DateTime.Now
 
-                }
+                },
+                                new Membership
+                                {
+                                    MemberID = 2,
+                                    TeamID = 1,
+                                    MembershipDate = System.DateTime.Now
+
+                                },
+                                                new Membership
+                                                {
+                                                    MemberID = 3,
+                                                    TeamID = 2,
+                                                    MembershipDate = System.DateTime.Now
+
+                                                }
         );
         }
     }

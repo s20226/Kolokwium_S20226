@@ -9,7 +9,7 @@ namespace Kolokwium_S20226.Configurations
         public void Configure(EntityTypeBuilder<File> builder)
         {
             builder
-                 .HasKey(e => e.FileID);
+                 .HasKey(e => new { e.FileID, e.TeamID });
             builder
                 .Property(e => e.FileName).HasMaxLength(100)
                 .IsRequired();
@@ -27,7 +27,21 @@ namespace Kolokwium_S20226.Configurations
             builder.HasData(
                 new File
                 {
-                }
+                    FileID = 1,
+                    TeamID = 1,
+                    FileName = "Filename1",
+                    FileExtension = "doc",
+                    FileSize = 10
+                },
+                                new File
+                                {
+                                    FileID = 2,
+                                    TeamID = 2,
+                                    FileName = "Filename2",
+                                    FileExtension = "doc",
+                                    FileSize = 10
+                                }
+
                 );
         }
     }

@@ -21,6 +21,12 @@ namespace Kolokwium_S20226.Configurations
             builder.HasData(
                 new Organization
                 {
+                    OrganizationID=1, OrganizationName="Organization 1", OrganizationDomain="Domain"
+                }, new Organization
+                {
+                    OrganizationID = 2,
+                    OrganizationName = "Organization 2",
+                    OrganizationDomain = "Domain2"
                 }
                 );
         }

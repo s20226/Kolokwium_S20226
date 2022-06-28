@@ -28,8 +28,29 @@ namespace Kolokwium_S20226.Configurations
             builder.HasData(
                 new Member
                 {
+                    MemberID = 1,
+                    OrganizationID = 1,
+                    MemberName = "Jan",
+                    MemberSurname = "Gorski",
+                    MemberNickName = "Nick1"
+                },
+                                new Member
+                                {
+                                    MemberID = 2,
+                                    OrganizationID = 1,
+                                    MemberName = "Jan",
+                                    MemberSurname = "Kowalski",
+                                    MemberNickName = "Janek"
+                                },
+                                                new Member
+                                                {
+                                                    MemberID = 3,
+                                                    OrganizationID = 2,
+                                                    MemberName = "Janusz",
+                                                    MemberSurname = "Gorski",
+                                                    MemberNickName = "Ala"
+                                                }
 
-                }
                 );
         }
     }

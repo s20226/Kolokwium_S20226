@@ -25,6 +25,13 @@ namespace Kolokwium_S20226.Configurations
             builder.HasData(
                 new Team
                 {
+                    TeamID=1,OrganizationID=1,TeamName="Pogromcy", TeamDescription="Description"
+                }, new Team
+                {
+                    TeamID = 2,
+                    OrganizationID = 2,
+                    TeamName = "Best",
+                    TeamDescription = "Description"
                 }
                 );
         }
