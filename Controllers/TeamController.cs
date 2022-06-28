@@ -21,7 +21,7 @@ namespace Kolokwium_S20226.Controllers
             if (!await _dbService.CheckTeam(teamID))
                 return NotFound("Brak teamu o tym id");
             return Ok(await _dbService.GetTeam(teamID));
-            
+
 
         }
 
@@ -29,8 +29,10 @@ namespace Kolokwium_S20226.Controllers
         public async Task<IActionResult> AddMember(int teamID, Member member)
         {
             if (!await _dbService.CheckOrganization(member, teamID)) return BadRequest("Roznce organizacje");
-            return  
-        }
+            await _dbService.AddMember(teamID, member);
+            return Ok("Dodano uzytkownika");
 
+
+        }
     }
 }

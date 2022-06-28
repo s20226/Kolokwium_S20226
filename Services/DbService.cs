@@ -16,9 +16,9 @@ namespace Kolokwium_S20226.Services
             _dbContext = mainDbContext;
         }
 
-        public Task AddMember(int teamID, Member member)
+        public async Task AddMember(int teamID, Member member)
         {
-            throw new System.NotImplementedException();
+            var membership = _dbContext.Memberships.Add(new Membership { MemberID=member.MemberID, MembershipDate=System.DateTime.Now, TeamID = teamID})
         }
 
         public async Task<bool> CheckOrganization(Member member, int teamID)
