@@ -28,7 +28,8 @@ namespace Kolokwium_S20226.Controllers
         [HttpPost("{teamID}/member")]
         public async Task<IActionResult> AddMember(int teamID, Member member)
         {
-            return await 
+            if (!_dbService.CheckOrganization(member, teamID)) return BadRequest("Roznce organizacje");
+            return  
         }
 
     }
