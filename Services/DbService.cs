@@ -16,6 +16,20 @@ namespace Kolokwium_S20226.Services
             _dbContext = mainDbContext;
         }
 
+        public Task AddMember(int teamID, Member member)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task<bool> CheckOrganization(Member member, int teamID)
+        {
+            Member memberToAdd = await _dbContext.Members.Where(e => e.MemberID == member.MemberID).FirstOrDefaultAsync();
+            Team team = await _dbContext.Teams.Where(e => e.TeamID == teamID).FirstOrDefaultAsync();
+            if (memberToAdd.OrganizationID == team.OrganizationID) return true;
+            else return false;
+            
+        }
+
         public async Task<bool> CheckTeam(int teamID)
         {
             var team = await _dbContext.Teams.Where(e => e.TeamID == teamID).FirstOrDefaultAsync();

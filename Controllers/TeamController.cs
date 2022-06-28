@@ -1,4 +1,5 @@
-﻿using Kolokwium_S20226.Services;
+﻿using Kolokwium_S20226.Models;
+using Kolokwium_S20226.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -22,6 +23,12 @@ namespace Kolokwium_S20226.Controllers
             return Ok(await _dbService.GetTeam(teamID));
             
 
+        }
+
+        [HttpPost("{teamID}/member")]
+        public async Task<IActionResult> AddMember(int teamID, Member member)
+        {
+            return await 
         }
 
     }
